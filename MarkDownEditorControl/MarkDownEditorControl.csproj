@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl></RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.22.1" />
+    <PackageReference Include="MarkdigExtensions.SyntaxHighlighting" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.721-prerelease" />
+  </ItemGroup>
+
+</Project>
