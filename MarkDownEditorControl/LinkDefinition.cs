@@ -1,20 +1,21 @@
-﻿using System;
+﻿using PropertyEditor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
     public class LinkDefinition
     {
-        [MarkDownItemPropertyAttribute("Link Text", "Text")]
+        [PropertyAttribute("Link Text", "Text")]
         public string LinkText { get; set; }
 
-        [MarkDownItemPropertyAttribute("Display Text", "Text")]
+        [PropertyAttribute("Display Text", "Text")]
         public string Display { get; set; }
 
-        [MarkDownItemPropertyAttribute("Tool Tip", "Text")]
+        [PropertyAttribute("Tool Tip", "Text")]
         public string Tooltip { get; set; }
     }
 }

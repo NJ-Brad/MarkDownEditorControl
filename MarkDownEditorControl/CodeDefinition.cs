@@ -1,14 +1,15 @@
-﻿using System;
+﻿using PropertyEditor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
     public class CodeDefinition
     {
-        [MarkDownItemPropertyAttribute("Language", "Choice", new[] {"",
+        [PropertyAttribute("Language", "Choice", new[] {"",
             "asax",
             "ashx",
             "aspx",

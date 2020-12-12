@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using System.IO;
 using Markdig;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
-    public partial class MarkDownDisplay : UserControl
+    public partial class ViewerControl : UserControl
     {
-        public MarkDownDisplay()
+        public ViewerControl()
         {
             InitializeComponent();
         }
@@ -30,18 +30,14 @@ namespace MarkDownHelper
         private void ShowContent(string html)
         {
             // https://weblogs.asp.net/gunnarpeipman/displaying-custom-html-in-webbrowser-control
-            webBrowser1.Navigate("about:blank");
-            if (webBrowser1.Document != null)
-            {
-                webBrowser1.Document.Write(string.Empty);
-            }
+            webBrowser1.NavigateToString("about:blank");
+            webBrowser1.NavigateToString(html.EnableNewerFeatures().AddGitHubStyle().TranslatePaths(Path.GetDirectoryName(fileName)));
+        }
 
-            string newText = html.EnableNewerFeatures().AddGitHubStyle();
-            if (!string.IsNullOrEmpty(FileName))
-            {
-                newText = newText.TranslatePaths(Path.GetDirectoryName(FileName));
-            }
-            webBrowser1.DocumentText = newText;
+        protected override void OnCreateControl()
+        {
+            base.OnCreateControl();
+            webBrowser1.EnsureCoreWebView2Async();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +47,7 @@ namespace MarkDownHelper
                 File.WriteAllText(fileName, "");
             }
 
-            Editor.Edit(fileName);
+            EditorForm.Edit(fileName);
             Show(fileName);
         }
 

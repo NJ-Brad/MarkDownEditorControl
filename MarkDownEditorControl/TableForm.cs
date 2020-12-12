@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
-    public partial class TableForm : Form
+    internal partial class TableForm : Form
     {
         public TableForm()
         {

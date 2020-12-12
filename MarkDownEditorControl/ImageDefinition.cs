@@ -1,21 +1,22 @@
-﻿using System;
+﻿using PropertyEditor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
     public class ImageDefinition
     {
 
-        [MarkDownItemPropertyAttribute("Image URL", "Text")]
+        [PropertyAttribute("Image URL", "Text")]
         public string ImageUrl { get; set; }
 
-        [MarkDownItemPropertyAttribute("Alt Text", "Text")]
+        [PropertyAttribute("Alt Text", "Text")]
         public string Display { get; set; }
 
-        [MarkDownItemPropertyAttribute("Tool Tip", "Text")]
+        [PropertyAttribute("Tool Tip", "Text")]
         public string Tooltip { get; set; }
     }
 }

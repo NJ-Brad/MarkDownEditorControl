@@ -6,14 +6,15 @@ using System.Text;
 using System.Windows.Forms;
 using Markdig;
 using Microsoft.Web.WebView2.WinForms;
+using PropertyEditor;
 
-namespace MarkDownHelper
+namespace MarkDownEditor
 {
     public delegate string OperationDelegate(string s);  
 
-    public partial class Editor : Form
+    public partial class EditorControl : UserControl
     {
-        public Editor()
+        public EditorControl()
         {
             InitializeComponent();
 // http://stackoverflow.com/questions/4823468/comments-in-markdown
@@ -158,14 +159,15 @@ namespace MarkDownHelper
 
         public static void Edit(string fileName)
         {
-            Editor ed = new Editor();
+            EditorForm ed = new EditorForm();
             ed.FileName = fileName;
             ed.ShowDialog();
         }
 
-        protected override void OnShown(EventArgs e)
+        protected override void OnCreateControl()
         {
-            base.OnShown(e);
+            base.OnCreateControl();
+
             if (!string.IsNullOrEmpty(fileName))
             {
                 openToolStripMenuItem.Enabled = false;

@@ -1,4 +1,4 @@
-﻿namespace MarkDownHelper
+﻿namespace MarkDownEditor
 {
     partial class TableForm
     {

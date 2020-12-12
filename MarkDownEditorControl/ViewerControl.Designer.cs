@@ -1,6 +1,6 @@
-﻿namespace MarkDownHelper
+﻿namespace MarkDownEditor
 {
-    partial class MarkDownDisplay
+    partial class ViewerControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+			this.webBrowser1 = new Microsoft.Web.WebView2.WinForms.WebView2();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
@@ -75,10 +75,10 @@
 
         }
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Panel panel1;
+		private Microsoft.Web.WebView2.WinForms.WebView2 webBrowser1;
+		private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
     }
 }
