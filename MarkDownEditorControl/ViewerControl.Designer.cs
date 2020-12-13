@@ -28,57 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.webBrowser1 = new Microsoft.Web.WebView2.WinForms.WebView2();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.panel1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// webBrowser1
-			// 
-			this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.webBrowser1.Location = new System.Drawing.Point(0, 23);
-			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-			this.webBrowser1.Name = "webBrowser1";
-			this.webBrowser1.Size = new System.Drawing.Size(150, 127);
-			this.webBrowser1.TabIndex = 2;
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.button1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(150, 23);
-			this.panel1.TabIndex = 3;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(0, 0);
-			this.button1.Margin = new System.Windows.Forms.Padding(0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Edit";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// MarkDownDisplay
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.webBrowser1);
-			this.Controls.Add(this.panel1);
-			this.Name = "MarkDownDisplay";
-			this.panel1.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.webBrowser1 = new Microsoft.Web.WebView2.WinForms.WebView2();
+
+            this.SuspendLayout();
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(860, 220);
+            this.webBrowser1.TabIndex = 0;
+            // 
+            // ViewerControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "ViewerControl";
+            this.Size = new System.Drawing.Size(175, 173);
+
+            this.Controls.Add(webBrowser1);
+
+            this.ResumeLayout(false);
 
         }
 
 		#endregion
 
 		private Microsoft.Web.WebView2.WinForms.WebView2 webBrowser1;
-		private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
     }
 }

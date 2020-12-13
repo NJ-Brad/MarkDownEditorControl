@@ -31,6 +31,7 @@ namespace TestApp
         {
             this.form11 = new ResourceTest.Form1();
             this.editorControl1 = new MarkDownEditor.EditorControl();
+            this.viewerControl1 = new MarkDownEditor.ViewerControl();
             this.SuspendLayout();
             // 
             // form11
@@ -46,14 +47,24 @@ namespace TestApp
             this.editorControl1.Location = new System.Drawing.Point(12, 60);
             this.editorControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.editorControl1.Name = "editorControl1";
-            this.editorControl1.Size = new System.Drawing.Size(775, 394);
+            this.editorControl1.Size = new System.Drawing.Size(295, 248);
             this.editorControl1.TabIndex = 1;
+            // 
+            // viewerControl1
+            // 
+            this.viewerControl1.FileName = null;
+            this.viewerControl1.Location = new System.Drawing.Point(390, 90);
+            this.viewerControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.viewerControl1.Name = "viewerControl1";
+            this.viewerControl1.Size = new System.Drawing.Size(175, 173);
+            this.viewerControl1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.viewerControl1);
             this.Controls.Add(this.editorControl1);
             this.Controls.Add(this.form11);
             this.Name = "Form1";
@@ -66,6 +77,7 @@ namespace TestApp
 
         private ResourceTest.Form1 form11;
         private MarkDownEditor.EditorControl editorControl1;
+        private MarkDownEditor.ViewerControl viewerControl1;
     }
 }
 

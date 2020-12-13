@@ -23,9 +23,7 @@ namespace MarkDownEditor
 
         private string fileName;
 
-        public string FileName { get => fileName; set { fileName = value; Show(fileName); } }
-
-        public bool ReadOnly { get => readOnly; set { readOnly = value; panel1.Visible = !readOnly; } }
+        public string FileName { get => fileName; set { fileName = value; } }
 
         private void ShowContent(string html)
         {
@@ -34,10 +32,10 @@ namespace MarkDownEditor
             webBrowser1.NavigateToString(html.EnableNewerFeatures().AddGitHubStyle().TranslatePaths(Path.GetDirectoryName(fileName)));
         }
 
-        protected override void OnCreateControl()
+        protected override async void OnCreateControl()
         {
             base.OnCreateControl();
-            webBrowser1.EnsureCoreWebView2Async();
+            await webBrowser1.EnsureCoreWebView2Async();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,10 +46,10 @@ namespace MarkDownEditor
             }
 
             EditorForm.Edit(fileName);
-            Show(fileName);
+            LoadFile(fileName);
         }
 
-        private void Show(string fileName)
+        public void LoadFile(string fileName)
         {
             if (File.Exists(fileName))
             {

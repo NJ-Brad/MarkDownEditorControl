@@ -172,7 +172,7 @@ namespace MarkDownEditor
             {
                 openToolStripMenuItem.Enabled = false;
                 saveAsToolStripMenuItem.Enabled = false;
-                LoadFileToEdit(fileName);
+                LoadFile(fileName);
             }
 
             webBrowser1.EnsureCoreWebView2Async();
@@ -327,11 +327,11 @@ namespace MarkDownEditor
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                LoadFileToEdit(ofd.FileName);
+                LoadFile(ofd.FileName);
             }
         }
  
-        private void LoadFileToEdit(string fileName)
+        public void LoadFile(string fileName)
         {
             this.fileName = fileName;
             richTextBox1.Text = File.ReadAllText(fileName);
@@ -426,6 +426,24 @@ Include a section for credits in order to highlight and link to the authors of y
 # License:
 Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!";
 
+        }
+
+
+        private void adrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = string.Format(@"# fileNumber.title
+
+{0}
+
+## Status : Proposed
+
+## Context :
+
+## Decision : 
+
+## Consequences : 
+",
+DateTime.Today.ToString("yyyy-MM-dd"));
         }
 
         private void richTextBox1_MouseUp(object sender, MouseEventArgs e)

@@ -17,5 +17,9 @@ namespace TestApp
             InitializeComponent();
         }
 
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+        }
     }
 }
